@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>D-Day</title>
+    <link rel="stylesheet" href="../css/d-day.css" />
+    <script src="../js/d-day.js" defer></script>
+    <!-- js에 defer 속성을 부여하면, 맨위에서 식별자를 잡을 수 없어 오류가 나던 기능이 실행이 된다. 왜? -->
+  </head>
+  <body>
+    <h1>D-Day</h1>
+    <div id="d-day-container">
+      <div class="d-day-child-container">
+        <span id="day">0</span>
+        <span>일</span>
+      </div>
+      <div class="d-day-child-container">
+        <span id="hour">0</span>
+        <span>시간</span>
+      </div>
+      <div class="d-day-child-container">
+        <span id="min">0</span>
+        <span>분</span>
+      </div>
+      <div class="d-day-child-container">
+        <span id="sec">0</span>
+        <span>초</span>
+      </div>
+    </div>
+    <div id="d-day-message"></div>
+    <div id="target-selector">
+      <input type="text" id="target-year-input" class="target-input" size="7" placeholder="연 Year" /> -
+      <input type="text" id="target-month-input" class="target-input" size="7" placeholder="월 Month" /> -
+      <input type="text" id="target-date-input" class="target-input" size="7" placeholder="일 Date" />
+    </div>
+    <button id="start-btn" onclick="starter()">카운트다운 시작</button>
+  </body>
+</html>
