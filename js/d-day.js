@@ -40,30 +40,12 @@ const counterMaker = () => {
     return; // 현 조건에 들어왔을 경우, 아래의 불필요한 연산을 실행하지 않고 함수를 종료시킨다.
   }
 
-  // const remainingDate = Math.floor(remaining / 3600 / 24);
-  // const remainingHour = Math.floor(remaining / 3600) % 24;
-  // const remainingMin = Math.floor(remaining / 60) % 60;
-  // const remainingSec = Math.floor(remaining) % 60;
-  // remainingObj라는 객체는 위에 4개의 변수 선언을 동시에 진행하는 것과 비슷하다고 할 수 있다.
   const remainingObj = {
     remainingDate: Math.floor(remaining / 3600 / 24),
     remainingHour: Math.floor(remaining / 3600) % 24,
     remainingMin: Math.floor(remaining / 60) % 60,
     remainingSec: Math.floor(remaining) % 60,
   }; // 값이 달라서 반복문 활용으로 리팩토링 하지는 못 했다.
-
-  // const day = document.querySelector('#day');
-  // const hour = document.getElementById('hour');
-  // const min = document.getElementById('min');
-  // const sec = document.querySelector('#sec');
-  // documentObj의 객체 지정도 위와 같다.
-
-  // const documentObj = {
-  //   day: document.querySelector('#day'),
-  //   hour: document.getElementById('hour'),
-  //   min: document.getElementById('min'),
-  //   sec: document.querySelector('#sec'),
-  // }; // 아래의 for-of문이
 
   // 아래의 documentArr와 timeKeys를 포함해, for-of문으로
   const documentArr = ['day', 'hour', 'min', 'sec'];
@@ -76,26 +58,14 @@ const counterMaker = () => {
     i++;
   } // for-of문, tag는 of Arr에서 배열(주로 배열)의 '태그(요소, 값)'를 가져온다. 배열의 길이만큼 반복한다.
 
-  //const docKeys = Object.keys(documentObj); // 아래의 for-in문에서 documentObj[key]를 사용하였기에, 변수가 필요 없어짐. 리팩토링.
-
-  // for (let i = 0; i < timeKeys.length; i++) { // 아래의 for-in문이 여기 for문을 대체함.
-  //   //console.log(documentObj[docKeys[i]]);
-  //   documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
-  // } // 위 변수와 이 for문이 아래의 4줄짜리 주석을 압축시켰다. 반복문, 객체와의 콜라보가 화려하다.
-  // documentObj.day.textContent = remainingObj['remainingDate'];
-  // documentObj.hour.textContent = remainingObj.remainingHour;
-  // documentObj['min'].textContent = remainingObj['remainingMin'];
-  // documentObj['sec'].textContent = remainingObj.remainingSec;
-
-  // for (let key in documentObj) {
-  //   //console.log(documentObj[key], key);
-  //   documentObj[key].textContent = remainingObj[timeKeys[i]];
-  //   i++;
-  // } // for-in문, key는 in Obj에서 객체(주로 객체)의 '키'를 가져온다. 객체 프로퍼티(키:값)의 갯수만큼 반복한다. / 현재 for-of문의 사용으로 주석 처리 했다.
+  // 현재 for-of문의 사용으로 주석 처리 했다.
 };
 
 const starter = () => {
   container.style.display = 'flex';
   messageContainer.style.display = 'none';
-  counterMaker();
+  for (let i = 0; i < 100; i++) {
+    setTimeout(() => {}); // setTimeout에 함수를 넣어줘야 하는데, 익명 함수의 화살표함수를 기입한다.
+    counterMaker();
+  }
 }; // counterMaker()를 포함시켜 버림. display의 none과 flex의 조절로 화면 출력/사라짐을 나타냄.
