@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script-practice.js" defer></script>
+    <!-- defer 어트리뷰트(속성)는 js파일이 html 순서대로 먼저 적용되는 것이 아닌 문서 전체를 보고(마지막 위치?) 적용하는 속성 -->
+  </head>
+  <body>
+    <h1>ToDo</h1>
+    <div class="todo-container">
+      <input type="text" id="todo-input" onkeydown="keyCodeCheck()" />
+      <ul id="todo-list">
+        <li><span>출근</span></li>
+        <li><span>저녁 먹기</span></li>
+      </ul>
+    </div>
+  </body>
+</html>
